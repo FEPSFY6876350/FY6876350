@@ -92,6 +92,25 @@ p.ex1{
     document.getElementById"("date&time").innerHTML = d; 
     
   </script>
+
+<body>
+  <button id="colourButton">click me to change colour</button>button>
+  <script> 
+  //Get a reference to the button element
+    var button = document.getElemementById("colourButton");
+
+    //Function to change the button color
+    function changeColor() {
+      //Generatre a random color (hexadecimal)
+      var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+
+      //Set the button's background color to the random color
+      button.style.backgroundColor = randomColor;
+    }
+    //Add a click event listener to the button
+    button.addEventListener("click",changeColor);
+  </script>
+</body>
   
   
     <a href="https://aws.amazon.com/what-is/quantum-computing/#:~:text=Quantum%20computing%20is%20a%20multidisciplinary,powerful%20supercomputers%20on%20the%20market"> AWS/Amazon Web Services (no date) What is Quantum Computing? <
