@@ -115,8 +115,10 @@ p.ex1{
 
 
  <title>My Daily Activities</title>
-    <script type="chart_div></div>
-      <script type="text/javascript">
+      <script type="text/javascript"> scr=https://www.gstatic.com/charts/loader.js></script>
+  <div id="chart_div"></div>
+  
+  <script type="text/java">  
       google.charts.load('current',{'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
@@ -137,7 +139,7 @@ p.ex1{
       var chart = new google.visualization.PieChart(document.getElementById('chart_dic'));
       chart.draw(data,options);
       }
-      </script
+ 
 
 
   
