@@ -74,7 +74,7 @@ p.ex1{
       <th><h3> Table of Contents</h3></th>
     </tr>
     <tr>
-      <td><a href = #"Abstract"</td>
+      <td><a href = #"Abstract">Abstract</td>
     </tr>
     <tr>
       <td><a href = #"Introduction">Introduction</td>
@@ -98,128 +98,8 @@ p.ex1{
     
   </script>
 
-<body>
-  <button id="colourButton">click me to change colour</button>
-  <script> 
-  //Get a reference to the button element
-    var button = document.getElemementById("colourButton");
-
-    //Function to change the button color
-    function changeColor() {
-      //Generatre a random color (hexadecimal)
-      var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
-
-      //Set the button's background color to the random color
-      button.style.backgroundColor = randomColor;
-    }
-    //Add a click event listener to the button
-    button.addEventListener("click",changeColor);
-  </script>
-</body>
-
   
- <title>My Daily Activities</title>
-      <script type="text/javascript"> scr=https://www.gstatic.com/charts/loader.js></script>
-  <div id="chart_div"></div>
-  
-  <script type="text/javascript">  
-      google.charts.load('current',{'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-      ['Task','Hours per Day'],
-      ['Work',8],
-      ['Sleep',8],
-      ['Eat',2],
-      ['Study',4],
-      ['Exercise',2]
-      ]);
-
-      var options = {
-      title:'My Daily ACtivites'
-      };
-
-      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-      chart.draw(data,options);
-      }
- 
-  </script>
-
-  <script type="text/javascript">
-    function drawchart(){
-      var data = new google.visualization.DataTable();
-      data.addColumn('number','Age');
-      data.addColumn('number','Salary');
-
-      data.addRows([
-        [25,40000],
-        [30,50000],
-        [35,60000],
-        [40,70000],
-        [45,80000],
-        [50,90000]
-        ]};
-    var options={
-      title:'Age vs Salary',
-      hAxis:{title:'Age'},
-      vAxis:{title:'Salary'}
-    };
-    var chart = new google.visulization.ScatterChart(document.getElementById('Chart_div'));
-    chart.draw(data,options);
-    }
-  </script>
-
   <video scr="presentation video to be formatted" width="800" height="450" controls>
-
-
-    ///////////////////////////////////////////////////////////
-
-    
-  <div id="last-updated">Loading last update time...</div>
-<!-- Verify Button -->
-<button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
-    Verify Last Modified Time
-</button>
-<script>
-    async function getLastUpdatedTime() {
-        const username = 'nr0025';
-        const repo = 'FY0025';
-       
-        const url = `https://api.github.com/repos/${username}/${repo}/commits`;
-        try {
-            const response = await fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                }
-            });
-            if (!response.ok) {
-                throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
-            }
-            const commits = await response.json();
-            if (commits && commits.length > 0) {
-                const lastCommitDate = new Date(commits[0].commit.committer.date);
-               
-                // Displaying the time on load
-                document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
-            } else {
-                document.getElementById('last-updated').innerText = 'No commits found in the repository.';
-            }
-        } catch (error) {
-            console.error('Error fetching the last updated time:', error);
-            document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
-        }
-    }
-    // Function to verify the last update time by re-fetching it from the API
-    async function verifyLastUpdatedTime() {
-        document.getElementById('last-updated').innerText = 'Verifying...';
-        await getLastUpdatedTime();
-        alert("Last modified time has been successfully verified from GitHub API.");
-    }
-    // Initial load to display the time on page load
-    window.onload = getLastUpdatedTime;
-</script>
 
     //////////////////////////////////////////////////
 <!-- Last commit time display -->
