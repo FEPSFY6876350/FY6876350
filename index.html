@@ -125,11 +125,11 @@ p.ex1{
 
       function drawChart() {
       var data = google.visualization.arrayToDataTable([
-      ['Tas','Hours per Day'],
+      ['Task','Hours per Day'],
       ['Work',8],
       ['Sleep',8],
       ['Eat',2],
-      ['Study',4]
+      ['Study',4],
       ['Exercise',2]
       ]);
 
@@ -137,7 +137,7 @@ p.ex1{
       title:'My Daily ACtivites'
       };
 
-      var chart = new google.visualization.PieChart(document.getElementById('chart_dic'));
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
       chart.draw(data,options);
       }
  
