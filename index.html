@@ -144,7 +144,31 @@ p.ex1{
   </script>
   </head>
 
+  <head>
   <script type="text/javascript">
+    function drawchart(){
+      var data = new google.visualization.DataTable();
+      data.addColumn('number','Age');
+      data.addColumn('number','Salary');
+
+      data.addRows([
+        [25,40000],
+        [30,50000],
+        [35,60000],
+        [40,70000],
+        [45,80000],
+        [50,90000]
+        ]};
+    var options={
+      title:'Age vs Salary',
+      hAxis:{title:'Age'},
+      vAxis:{title:'Salary'}
+    };
+    var chart = new google.visulization.ScatterChart(document.getElementById('Chart_div'));
+    chart.draw(data,options);
+    }
+  </script>
+      </head>
 
   
     <a href="https://aws.amazon.com/what-is/quantum-computing/#:~:text=Quantum%20computing%20is%20a%20multidisciplinary,powerful%20supercomputers%20on%20the%20market"> AWS/Amazon Web Services (no date) What is Quantum Computing? <
